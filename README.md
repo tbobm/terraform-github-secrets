@@ -50,6 +50,43 @@ export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 [tf-gh-auth]: https://registry.terraform.io/providers/integrations/github/latest/docs#authentication
 
+### Example
+
+```hcl
+module "secrets" {
+  source = "../"
+
+  repository = "tbobm/terraform-github-secrets"
+
+  secrets = {
+    deploy_key = {
+      name      = "DEPLOY_KEY"
+      plaintext = "ABCDEF"
+    }
+    registry_username = {
+      name      = "DOCKERHUB_USERNAME"
+      plaintext = "sampleuser"
+    }
+    registry_password = {
+      name      = "DOCKERHUB_PASSWORD"
+      plaintext = "samplepass"
+    }
+  }
+  environment_secrets = {
+    production = {  # the production env must exist beforehand
+      ssh_username = {
+        name      = "SSH_USERNAME"
+        plaintext = "sampleuser"
+      }
+      ssh_password = {
+        name      = "SSH_PASSWORD"
+        plaintext = "samplepass"
+      }
+    }
+  }
+}
+```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -71,6 +108,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [github_actions_environment_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_environment_secret) | resource |
 | [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/repository) | data source |
 
