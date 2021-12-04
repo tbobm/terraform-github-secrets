@@ -1,3 +1,3 @@
-data "github_repository" "repo" {
+data "github_repository" "this" {
   full_name = var.repository
 }
