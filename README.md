@@ -27,4 +27,35 @@ Full contributing [guidelines are covered
 here](https://github.com/tbobm/terraform-github-secrets/blob/master/.github/CONTRIBUTING.md).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 4.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 4.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [github_repository.repo](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/repository) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_repository"></a> [repository](#input\_repository) | The full name of the repository in the form org/repo | `string` | n/a | yes |
+
+## Outputs
+
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
