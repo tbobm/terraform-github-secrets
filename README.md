@@ -26,6 +26,30 @@ section.
 Full contributing [guidelines are covered
 here](https://github.com/tbobm/terraform-github-secrets/blob/master/.github/CONTRIBUTING.md).
 
+## Usage
+
+### Github Authentication
+
+You will need to authenticate against Github using an OAuth Token or Personal Access Token.
+See [Github Provider#Authentication][tf-gh-auth] for more informations.
+
+This can be done by setting the `token` argument of the `github` provider or by exporting
+your Token to the `GITHUB_TOKEN` environment variable.
+
+_Provider configuration:_
+```hcl
+provider "github" {
+  token = var.token # or `GITHUB_TOKEN`
+}
+```
+
+_Environment variable configuration:_
+```bash
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+[tf-gh-auth]: https://registry.terraform.io/providers/integrations/github/latest/docs#authentication
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
