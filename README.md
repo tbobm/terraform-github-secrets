@@ -71,13 +71,16 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [github_repository.repo](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/repository) | data source |
+| [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
+| [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/repository) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_environment_secrets"></a> [environment\_secrets](#input\_environment\_secrets) | A map of environment-scoped secrets | `map(any)` | `{}` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | The full name of the repository in the form org/repo | `string` | n/a | yes |
+| <a name="input_secrets"></a> [secrets](#input\_secrets) | A map of secret definitions | `map(any)` | `{}` | no |
 
 ## Outputs
 
