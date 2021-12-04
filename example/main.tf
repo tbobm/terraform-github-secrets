@@ -29,4 +29,16 @@ module "secrets" {
       plaintext = "samplepass"
     }
   }
+  environment_secrets = {
+    production = {
+      ssh_username = {
+        name      = "SSH_USERNAME"
+        plaintext = "sampleuser"
+      }
+      ssh_password = {
+        name      = "SSH_PASSWORD"
+        plaintext = "samplepass"
+      }
+    }
+  }
 }
