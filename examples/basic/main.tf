@@ -11,7 +11,8 @@ module "env" {
 }
 
 module "secrets" {
-  source = "tbobm/secrets/github"
+  source  = "tbobm/secrets/github"
+  version = "1.1.0"
 
   repository = "tbobm/terraform-github-secrets"
 

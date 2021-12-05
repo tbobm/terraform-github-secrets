@@ -16,7 +16,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_env"></a> [env](#module\_env) | tbobm/environments/github | 1.0.0 |
-| <a name="module_secrets"></a> [secrets](#module\_secrets) | tbobm/secrets/github |  |
+| <a name="module_secrets"></a> [secrets](#module\_secrets) | tbobm/secrets/github | 1.1.0 |
 
 ## Resources
 
