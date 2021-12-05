@@ -11,7 +11,7 @@ module "env" {
 }
 
 module "secrets" {
-  source = "../"
+  source = "tbobm/secrets/github"
 
   repository = "tbobm/terraform-github-secrets"
 
@@ -30,7 +30,7 @@ module "secrets" {
     }
   }
   environment_secrets = {
-    production = {
+    "${module.env.environments.production.environment}" = {
       ssh_username = {
         name      = "SSH_USERNAME"
         plaintext = "sampleuser"
@@ -38,6 +38,16 @@ module "secrets" {
       ssh_password = {
         name      = "SSH_PASSWORD"
         plaintext = "samplepass"
+      }
+    }
+    "${module.env.environments.staging.environment}" = {
+      ssh_username = {
+        name      = "SSH_USERNAME"
+        plaintext = "staging_user"
+      }
+      ssh_password = {
+        name      = "SSH_PASSWORD"
+        plaintext = "staging_password"
       }
     }
   }
