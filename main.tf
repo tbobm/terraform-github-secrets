@@ -1,7 +1,7 @@
 resource "github_actions_secret" "this" {
   for_each = local.secrets
 
-  repository      = data.github_repository.this.name
+  repository      = var.repository
   secret_name     = each.value.name
   plaintext_value = each.value.plaintext
 }
@@ -12,7 +12,7 @@ resource "github_actions_environment_secret" "this" {
     elem.id => elem
   }
 
-  repository      = data.github_repository.this.name
+  repository      = var.repository
   secret_name     = each.value.definition.name
   environment     = each.value.environment
   plaintext_value = each.value.definition.plaintext
