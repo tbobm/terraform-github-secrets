@@ -110,7 +110,6 @@ No modules.
 |------|------|
 | [github_actions_environment_secret.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/actions_environment_secret) | resource |
 | [github_actions_secret.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/actions_secret) | resource |
-| [github_repository.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/data-sources/repository) | data source |
 
 ## Inputs
 
