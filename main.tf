@@ -3,7 +3,8 @@ resource "github_actions_secret" "this" {
 
   repository      = var.repository
   secret_name     = each.value.name
-  plaintext_value = each.value.plaintext
+  plaintext_value = lookup(each.value, "plaintext", null)
+  encrypted_value = lookup(each.value, "encrypted", null)
 }
 
 resource "github_actions_environment_secret" "this" {
@@ -15,5 +16,6 @@ resource "github_actions_environment_secret" "this" {
   repository      = var.repository
   secret_name     = each.value.definition.name
   environment     = each.value.environment
-  plaintext_value = each.value.definition.plaintext
+  plaintext_value = lookup(each.value, "plaintext", null)
+  encrypted_value = lookup(each.value, "encrypted", null)
 }
