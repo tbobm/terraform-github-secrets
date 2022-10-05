@@ -31,7 +31,7 @@ module "secrets" {
     }
   }
   environment_secrets = {
-    "${module.env.environments.production.environment}" = {
+    (module.env.environments.production.environment) = {
       ssh_username = {
         name      = "SSH_USERNAME"
         plaintext = "sampleuser"
@@ -41,7 +41,7 @@ module "secrets" {
         plaintext = "samplepass"
       }
     }
-    "${module.env.environments.staging.environment}" = {
+    (module.env.environments.staging.environment) = {
       ssh_username = {
         name      = "SSH_USERNAME"
         plaintext = "staging_user"
@@ -52,4 +52,8 @@ module "secrets" {
       }
     }
   }
+}
+
+terraform {
+  required_version = ">= 0.15"
 }
